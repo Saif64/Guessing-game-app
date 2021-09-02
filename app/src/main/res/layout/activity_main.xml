@@ -91,18 +91,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
+    <Button
         android:id="@+id/resetBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:text="@string/reset"
+        android:text="@string/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/border"
-        android:src="@drawable/ic_baseline_restore_24"
+        android:background="@drawable/replay"
+
         android:contentDescription="@string/restore_the_game_again"
         android:backgroundTint="#F44336"/>
 

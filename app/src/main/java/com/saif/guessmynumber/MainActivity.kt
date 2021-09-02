@@ -1,6 +1,7 @@
 package com.saif.guessmynumber
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,7 +9,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    var number: Int = 5
+    var number: Int = (1..100).random()
+    var guess: Int = 0
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +22,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         resetBtn.setOnClickListener(this)
         rightBtn.setOnClickListener(this)
 
+
+
+
         question_textView.text = getString(R.string.what_number) + "?"
 
     }
@@ -27,7 +32,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.rightBtn -> {
+            R.id.rightBtn  -> {
+                resetBtn.text = getString(R.string.again)
                 rightNumber_textView.visibility = View.VISIBLE
                 question_textView.visibility = View.INVISIBLE
                 rightNumber_textView.text = getString(R.string.correct_answer) + number.toString()
@@ -38,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.resetBtn -> {
                 rightNumber_textView.visibility = View.INVISIBLE
                 question_textView.visibility = View.VISIBLE
-                number = 5
+                number = 50
                 printQuestion()
             }
         }
@@ -52,56 +58,66 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun clickOnDownArrow(){
-        if (number == 5){
-            number = 3
-            printQuestion()
-        }
-        else if (number == 3){
-            number = 2
-            printQuestion()
-        }
-        else if (number == 2){
-            number = 1
-            printQuestion()
-        }
-        else if (number == 8){
-            number = 7
-            printQuestion()
-        }
-        else if (number == 7){
-            number = 6
-            printQuestion()
-        }
+//        if (number == 5){
+//            number = 3
+//            printQuestion()
+//        }
+//        else if (number == 3){
+//            number = 2
+//            printQuestion()
+//        }
+//        else if (number == 2){
+//            number = 1
+//            printQuestion()
+//        }
+//        else if (number == 8){
+//            number = 7
+//            printQuestion()
+//        }
+//        else if (number == 7){
+//            number = 6
+//            printQuestion()
+//        }
+        number = (1..49).random()
+        printQuestion()
+
+
+
+
     }
 
     private fun clickUpArrow() {
-        if (number == 3){
-            number = 4
-            printQuestion()
-        }
-        else if (number == 5){
-            number = 6
-            printQuestion()
-        }
-        else if (number == 6){
-            number = 7
-            printQuestion()
-        }
-        else if (number == 7){
-            number = 8
-            printQuestion()
-        }
-        else if (number == 4){
-            number = 8
-            printQuestion()
-        }
-        else if (number == 8){
-            number = 9
-            printQuestion()
-        }
-        else if (number == 9){
-            number = 10
-            printQuestion()
-        }
+//        if (number == 3){
+//            number = 4
+//            printQuestion()
+//        }
+//        else if (number == 5){
+//            number = 6
+//            printQuestion()
+//        }
+//        else if (number == 6){
+//            number = 7
+//            printQuestion()
+//        }
+//        else if (number == 7){
+//            number = 8
+//            printQuestion()
+//        }
+//        else if (number == 4){
+//            number = 8
+//            printQuestion()
+//        }
+//        else if (number == 8){
+//            number = 9
+//            printQuestion()
+//        }
+//        else if (number == 9){
+//            number = 10
+//            printQuestion()
+//        }
+        number = (50..100).random()
+        printQuestion()
+
+
     }
 }
