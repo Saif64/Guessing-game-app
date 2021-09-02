@@ -58,26 +58,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun clickOnDownArrow(){
-//        if (number == 5){
-//            number = 3
-//            printQuestion()
-//        }
-//        else if (number == 3){
-//            number = 2
-//            printQuestion()
-//        }
-//        else if (number == 2){
-//            number = 1
-//            printQuestion()
-//        }
-//        else if (number == 8){
-//            number = 7
-//            printQuestion()
-//        }
-//        else if (number == 7){
-//            number = 6
-//            printQuestion()
-//        }
         number = (1..49).random()
         printQuestion()
 
@@ -87,34 +67,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun clickUpArrow() {
-//        if (number == 3){
-//            number = 4
-//            printQuestion()
-//        }
-//        else if (number == 5){
-//            number = 6
-//            printQuestion()
-//        }
-//        else if (number == 6){
-//            number = 7
-//            printQuestion()
-//        }
-//        else if (number == 7){
-//            number = 8
-//            printQuestion()
-//        }
-//        else if (number == 4){
-//            number = 8
-//            printQuestion()
-//        }
-//        else if (number == 8){
-//            number = 9
-//            printQuestion()
-//        }
-//        else if (number == 9){
-//            number = 10
-//            printQuestion()
-//        }
         number = (50..100).random()
         printQuestion()
 
