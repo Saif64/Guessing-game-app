@@ -6,7 +6,7 @@
     <string name="button_down">Button DOWN</string>
     <string name="button_right">Button RIGHT</string>
     <string name="restore_the_game_again">Restore the game again</string>
-    <string name="what_number">What is your number?</string>
+    <string name="what_number">Guess a number between 1 to 1000</string>
     <string name="is_your_number">"Is your number "</string>
     <string name="correct_answer">"your number is "</string>
     <string name="again">Again</string>

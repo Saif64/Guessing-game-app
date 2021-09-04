@@ -1,16 +1,16 @@
 package com.saif.guessmynumber
 
 import android.annotation.SuppressLint
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    var number: Int = (1..100).random()
-    var guess: Int = 0
+    private var mid:Int = Random.nextInt(0, 1000)
+    private var low:Int = 0
+    private var high:Int = 1000
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,15 +36,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 resetBtn.text = getString(R.string.again)
                 rightNumber_textView.visibility = View.VISIBLE
                 question_textView.visibility = View.INVISIBLE
-                rightNumber_textView.text = getString(R.string.correct_answer) + number.toString()
+                rightNumber_textView.text = " :) "
             }
 
             R.id.arrowDownBtn -> clickOnDownArrow()
             R.id.arrowUPBtn -> clickUpArrow()
             R.id.resetBtn -> {
-                rightNumber_textView.visibility = View.INVISIBLE
-                question_textView.visibility = View.VISIBLE
-                number = 50
+                mid = Random.nextInt(0,1000)
+                low = 0
+                high = 1000
                 printQuestion()
             }
         }
@@ -53,21 +53,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     @SuppressLint("SetTextI18n")
-    fun printQuestion(){
-        question_textView.text = getString(R.string.is_your_number) + number.toString() + "?"
+    private fun printQuestion(){
+        question_textView.text = mid.toString()
     }
 
-    fun clickOnDownArrow(){
-        number = (1..49).random()
+    private fun clickOnDownArrow(){
+        high = mid - 1
+        mid = (low + high)/2
         printQuestion()
-
-
-
-
     }
 
     private fun clickUpArrow() {
-        number = (50..100).random()
+        low = mid + 1
+        mid = (low + high)/2
         printQuestion()
 
 
